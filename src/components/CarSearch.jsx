@@ -1,11 +1,10 @@
-// CarSearch.jsx
 import React from "react";
 import Axios from "axios";
 
 const CarSearch = ({ setCarMake, setLoadingMake, setCarModel, setLoadingModel }) => {
   const fetchCarMake = () => {
     setLoadingMake(true);
-    Axios.get("https://carapi.example.com/make")
+    Axios.get("https://api.api-ninjas.com/v1/cars?limit=2&model=")
       .then((response) => {
         setCarMake(response.data.make);
         setLoadingMake(false);
@@ -18,7 +17,7 @@ const CarSearch = ({ setCarMake, setLoadingMake, setCarModel, setLoadingModel })
 
   const fetchCarModel = () => {
     setLoadingModel(true);
-    Axios.get("https://carapi.example.com/model")
+    Axios.get("https://api.api-ninjas.com/v1/cars?limit=2&model=")
       .then((response) => {
         setCarModel(response.data.model);
         setLoadingModel(false);
